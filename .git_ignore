@@ -1,6 +1,5 @@
 
-scripts/node_exporter.*amd64.*
-scripts/node_exporter.*amd64/.*
+*.gz
 
 
 # General
