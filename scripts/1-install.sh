@@ -1,5 +1,6 @@
 #!/bin/bash
-PROMETHEUS_VERSION="2.2.1"
+#PROMETHEUS_VERSION="2.2.1"
+PROMETHEUS_VERSION="2.18.0"
 wget https://github.com/prometheus/prometheus/releases/download/v${PROMETHEUS_VERSION}/prometheus-${PROMETHEUS_VERSION}.linux-amd64.tar.gz
 tar -xzvf prometheus-${PROMETHEUS_VERSION}.linux-amd64.tar.gz
 cd prometheus-${PROMETHEUS_VERSION}.linux-amd64/
@@ -7,7 +8,7 @@ cd prometheus-${PROMETHEUS_VERSION}.linux-amd64/
 #./prometheus --config.file=prometheus.yml
 
 # create user
-useradd --no-create-home --shell /bin/false prometheus 
+useradd --no-create-home --shell /bin/false prometheus
 
 # create directories
 mkdir -p /etc/prometheus
