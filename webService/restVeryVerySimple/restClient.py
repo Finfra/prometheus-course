@@ -1,5 +1,5 @@
 import urllib
-url = 'http://s1:9872/getString'
+url = 'http://s2:9872/getString'
 u = urllib.urlopen(url)
 data = u.read()# u is a file-like object
 data2=eval(data)
