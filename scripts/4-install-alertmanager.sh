@@ -1,5 +1,6 @@
 #!/bin/bash
-ALERTMANAGER_VERSION="0.15.0"
+ALERTMANAGER_VERSION="0.20.0"
+rm alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz
 wget https://github.com/prometheus/alertmanager/releases/download/v${ALERTMANAGER_VERSION}/alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz
 tar xvzf alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz
 cd alertmanager-${ALERTMANAGER_VERSION}.linux-amd64/
@@ -7,7 +8,7 @@ cd alertmanager-${ALERTMANAGER_VERSION}.linux-amd64/
 #./alertmanager --config.file=simple.yml
 
 # create user
-useradd --no-create-home --shell /bin/false alertmanager 
+useradd --no-create-home --shell /bin/false alertmanager
 
 # create directories
 mkdir /etc/alertmanager
@@ -90,4 +91,3 @@ alerting:
   - static_configs:
     - targets:
       - localhost:9093"
-
