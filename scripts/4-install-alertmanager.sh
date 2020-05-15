@@ -1,8 +1,9 @@
 #!/bin/bash
 ALERTMANAGER_VERSION="0.20.0"
-rm alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz
-wget https://github.com/prometheus/alertmanager/releases/download/v${ALERTMANAGER_VERSION}/alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz
-tar xvzf alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz
+rm -rf /etc/alertmanager
+s=$(ls /vagrant/forVm/alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz)
+[ ${#s} -eq 0 ]&& wget https://github.com/prometheus/alertmanager/releases/download/v${ALERTMANAGER_VERSION}/alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz -O /vagrant/forVm/alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz
+tar xvzf /vagrant/forVm/alertmanager-${ALERTMANAGER_VERSION}.linux-amd64.tar.gz
 cd alertmanager-${ALERTMANAGER_VERSION}.linux-amd64/
 # if you just want to start prometheus as root
 #./alertmanager --config.file=simple.yml
